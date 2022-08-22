@@ -1,0 +1,17 @@
+server:
+  port: 8080
+
+#公众号配置
+wechat:
+  appId: wx103aace444843a4a
+  appSecret: d4c0c4f81402447a02facff801801d54
+  tempId: pGJ_7NZmWGfp7HjiFtMJBpflRANrPE-y18pPtKtA5os
+  myBirthday: 2022-09-26
+  babyBirthday: 2022-10-12
+  loveDay: 2014-10-17
+
+#彩虹屁接口
+tianapi:
+  appKey: 56606d3ce026a2aa8586e500ea7d719e
+  area: 祁县
+
