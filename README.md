@@ -1,4 +1,5 @@
 ### 微信公众号消息推送（java版）
+<a href="https://blog.csdn.net/qq_39256196/article/details/126473379?spm=1001.2014.3001.5501">CSDN地址</a>
 ### 项目结构
 ```wechatTemplate					
    |———src                          # 程序根目录
