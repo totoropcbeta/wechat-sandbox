@@ -48,7 +48,7 @@ public class WeiXinServiceImpl implements WeiXinService {
         String requestUrl = UrlConstant.SEND_TEMPLATE  + token;
         //参数转json
         String json = JSONUtil.parseObj(sendMsgVo).toString();
-        String resp = HttpUtil.post(requestUrl,json);
+        String resp = HttpUtil.createPost(requestUrl).body(json).execute().body();
         JSONObject result = JSONUtil.parseObj(resp);
         logger.info("发送消息:" + resp);
         return result;
@@ -58,7 +58,7 @@ public class WeiXinServiceImpl implements WeiXinService {
     public String getCaiHongPiInfo(String appKey) {
         //请求地址
         String requestUrl = UrlConstant.CAI_HONG_API + appKey;
-        String resp = HttpUtil.get(requestUrl);
+        String resp = HttpUtil.createGet(requestUrl).contentType("application/x-www-form-urlencoded;charset=UTF-8").charset("UTF-8").execute().body();
         JSONObject obj = JSONUtil.parseObj(resp);
         logger.info("obj"+obj.toString());
         JSONArray newslist = obj.getJSONArray("newslist");
@@ -70,7 +70,7 @@ public class WeiXinServiceImpl implements WeiXinService {
     public String getZaoAnInfo(String appKey) {
         //请求地址
         String requestUrl = UrlConstant.MORNING_API + appKey;
-        String resp = HttpUtil.get(requestUrl);
+        String resp = HttpUtil.createGet(requestUrl).contentType("application/x-www-form-urlencoded;charset=UTF-8").charset("UTF-8").execute().body();
         JSONObject obj = JSONUtil.parseObj(resp);
         logger.info("obj"+obj.toString());
         JSONArray newslist = obj.getJSONArray("newslist");
