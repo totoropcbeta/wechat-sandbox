@@ -102,7 +102,7 @@ public class WechatTask {
         }
     }
 
-    @Scheduled(cron = "0 0 * * * ? ")
+    @Scheduled(cron = "0 0 9-18 * * ? *")
     public void sendDrinkMsg() {
         //配置及数据
         String appId = wechatConfig.getAppId();
