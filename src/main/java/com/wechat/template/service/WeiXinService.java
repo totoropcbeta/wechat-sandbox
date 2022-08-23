@@ -25,4 +25,10 @@ public interface WeiXinService {
 
     //天气信息
     WeatherInfo getWeatherInfo(String appKey, String city);
+
+    //笑话
+    String getJoke(String appKey);
+
+    //土味情话
+    String getSayLove(String appKey);
 }

@@ -28,4 +28,10 @@ public class WechatConfig {
 
     @Value("${wechat.loveDay}")
     private String loveDay;
+
+    @Value("${wechat.drinkTempId}")
+    private String drinkTempId;
+
+    @Value("${wechat.offDutyTempId}")
+    private String offDutyTempId;
 }

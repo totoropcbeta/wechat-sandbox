@@ -97,6 +97,61 @@ class TemplateApplicationTests {
     }
 
     @Test
+    void sendDrinkMsg(){
+        //配置及数据
+        String appId = wechatConfig.getAppId();
+        String appSecret = wechatConfig.getAppSecret();
+        String appKey = tianApiConfig.getAppKey();
+        //获取微信token
+        String token = weiXinService.getAccessToken(appId,appSecret);
+        //获取关注用户
+        List<String> userList = weiXinService.getUserList(token);
+        for (String openId : userList) {
+            //发送消息实体
+            WechatSendMsgVo sendMsgVo = new WechatSendMsgVo();
+            //设置喝水模板id
+            sendMsgVo.setTemplate_id(wechatConfig.getDrinkTempId());
+            //设置接收用户
+            sendMsgVo.setTouser(openId);
+            Map<String, WechatTemplateVo> map = new HashMap<>();
+            //获取笑话
+            String joke = weiXinService.getJoke(appKey);
+            map.put("joke", new WechatTemplateVo(joke,"#ff6666"));
+            sendMsgVo.setData(map);
+            JSONObject entries = weiXinService.sendMsg(sendMsgVo,token, openId);
+        }
+    }
+
+    @Test
+    void sendoffDutyMsg(){
+        String content = "卸载上班的压力，删除上班的烦恼，设置明天的斗志,下载轻松的话题，安装快乐的心情，播放灿烂的笑容。";
+        //配置及数据
+        String appId = wechatConfig.getAppId();
+        String appSecret = wechatConfig.getAppSecret();
+        String appKey = tianApiConfig.getAppKey();
+        //获取微信token
+        String token = weiXinService.getAccessToken(appId,appSecret);
+        //获取关注用户
+        List<String> userList = weiXinService.getUserList(token);
+        for (String openId : userList) {
+            //发送消息实体
+            WechatSendMsgVo sendMsgVo = new WechatSendMsgVo();
+            //设置喝水模板id
+            sendMsgVo.setTemplate_id(wechatConfig.getOffDutyTempId());
+            //设置接收用户
+            sendMsgVo.setTouser(openId);
+            Map<String, WechatTemplateVo> map = new HashMap<>();
+            //获取笑话
+            String sayLove = weiXinService.getSayLove(appKey);
+            map.put("tips",new WechatTemplateVo(content,"#ff6666"));
+            map.put("sayLove", new WechatTemplateVo(sayLove,"#E066FF"));
+            sendMsgVo.setData(map);
+            JSONObject entries = weiXinService.sendMsg(sendMsgVo,token, openId);
+        }
+    }
+
+
+    @Test
     void test() throws ParseException {
         String day = "2022-09-26";
         int i = fun2(day, "2022-08-21");

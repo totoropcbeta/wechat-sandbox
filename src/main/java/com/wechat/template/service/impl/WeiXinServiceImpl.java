@@ -90,4 +90,28 @@ public class WeiXinServiceImpl implements WeiXinService {
         return weatherInfos.get(0);
     }
 
+    @Override
+    public String getJoke(String appKey) {
+        //请求地址
+        String requestUrl = UrlConstant.JOKE_API + appKey + "&num=1";
+        String resp = HttpUtil.createGet(requestUrl).contentType("application/x-www-form-urlencoded;charset=UTF-8").charset("UTF-8").execute().body();
+        JSONObject obj = JSONUtil.parseObj(resp);
+        logger.info("obj"+obj.toString());
+        JSONArray newslist = obj.getJSONArray("newslist");
+        String content = ((JSONObject) newslist.get(0)).getStr("content");
+        return content;
+    }
+
+    @Override
+    public String getSayLove(String appKey) {
+        //请求地址
+        String requestUrl = UrlConstant.SAY_LOVE_API + appKey;
+        String resp = HttpUtil.createGet(requestUrl).contentType("application/x-www-form-urlencoded;charset=UTF-8").charset("UTF-8").execute().body();
+        JSONObject obj = JSONUtil.parseObj(resp);
+        logger.info("obj"+obj.toString());
+        JSONArray newslist = obj.getJSONArray("newslist");
+        String content = ((JSONObject) newslist.get(0)).getStr("content");
+        return content;
+    }
+
 }

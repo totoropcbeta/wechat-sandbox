@@ -22,4 +22,10 @@ public class UrlConstant {
 
     //天气接口
     public final static String TIAN_QI_API = "http://api.tianapi.com/tianqi/index?key=";
+
+    //笑话接口
+    public final static String JOKE_API = "http://api.tianapi.com/joke/index?key=";
+
+    //土味情话接口
+    public final static String SAY_LOVE_API = "http://api.tianapi.com/saylove/index?key=";
 }
