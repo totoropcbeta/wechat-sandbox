@@ -74,7 +74,7 @@ class TemplateApplicationTests {
             //最高气温
             map.put("highest", new WechatTemplateVo(weatherInfo.getHighest(), "#CD3333"));
             //降水概率
-            map.put("pop", new WechatTemplateVo(weatherInfo.getPop() + "%", "#A4D3EE"));
+            //map.put("pop", new WechatTemplateVo(weatherInfo.getPop() + "%", "#A4D3EE"));
             //今日建议
             map.put("tips", new WechatTemplateVo(weatherInfo.getTips(), "#FF7F24"));
             //相爱天数

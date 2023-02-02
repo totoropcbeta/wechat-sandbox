@@ -29,12 +29,12 @@ public class WeatherInfo {
     private String weather;
 
     /**
-     * 	天气图标
+     * 天气图标
      */
     private String weatherimg;
 
     /**
-     * 	实时天气
+     * 实时天气
      */
     private String real;
 
@@ -44,12 +44,12 @@ public class WeatherInfo {
     private String lowest;
 
     /**
-     * 	最高温
+     * 最高温
      */
     private String highest;
 
     /**
-     * 	风向
+     * 风向
      */
     private String wind;
 
@@ -59,7 +59,7 @@ public class WeatherInfo {
     private String winddeg;
 
     /**
-     * 	风速，km/h
+     * 风速，km/h
      */
     private String windspeed;
 
@@ -94,9 +94,9 @@ public class WeatherInfo {
     private String pcpn;
 
     /**
-     * 	降雨概率
+     * 降雨概率
      */
-    private String pop;
+    //private String pop;
 
     /**
      * 紫外线强度指数
@@ -104,17 +104,17 @@ public class WeatherInfo {
     private String uv_index;
 
     /**
-     * 	能见度，单位：公里
+     * 能见度，单位：公里
      */
     private String vis;
 
     /**
-     * 	相对湿度
+     * 相对湿度
      */
     private String humidity;
 
     /**
-     * 	生活指数提示
+     * 生活指数提示
      */
     private String tips;
 }

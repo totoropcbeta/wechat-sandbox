@@ -1,0 +1,12 @@
+{{morning.DATA}}
+{{date.DATA}} {{week.DATA}}
+城市：{{city.DATA}}
+天气：{{weather.DATA}}
+最低气温: {{lowest.DATA}}
+最高气温: {{highest.DATA}}
+今日建议： {{tips.DATA}}
+今天是我们恋爱的第 {{loveDay.DATA}} 天
+距离猪猪的生日还有 {{myBirthday.DATA}} 天
+距离牛牛的生日还有 {{babyBirthday.DATA}} 天
+
+彩虹屁： {{pipi.DATA}}

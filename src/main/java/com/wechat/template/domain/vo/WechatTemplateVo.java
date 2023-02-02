@@ -1,6 +1,5 @@
 package com.wechat.template.domain.vo;
 
-import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -23,7 +22,7 @@ public class WechatTemplateVo implements Serializable {
      */
     private String color;
 
-    public WechatTemplateVo(String value, String color){
+    public WechatTemplateVo(String value, String color) {
         this.value = value;
         this.color = color;
     }

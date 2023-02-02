@@ -32,7 +32,7 @@ public class WeiXinServiceImpl implements WeiXinService {
 
     @Override
     public List<String> getUserList(String accessToken) {
-        String requestUrl =  UrlConstant.GET_USER_LIST+ accessToken;
+        String requestUrl = UrlConstant.GET_USER_LIST + accessToken;
         String resp = HttpUtil.get(requestUrl);
         JSONObject result = JSONUtil.parseObj(resp);
         logger.info("用户列表:" + resp);
@@ -45,7 +45,7 @@ public class WeiXinServiceImpl implements WeiXinService {
     @Override
     public JSONObject sendMsg(WechatSendMsgVo sendMsgVo, String token, String openId) {
         //请求路径
-        String requestUrl = UrlConstant.SEND_TEMPLATE  + token;
+        String requestUrl = UrlConstant.SEND_TEMPLATE + token;
         //参数转json
         String json = JSONUtil.parseObj(sendMsgVo).toString();
         String resp = HttpUtil.createPost(requestUrl).body(json).execute().body();
@@ -60,7 +60,7 @@ public class WeiXinServiceImpl implements WeiXinService {
         String requestUrl = UrlConstant.CAI_HONG_API + appKey;
         String resp = HttpUtil.createGet(requestUrl).contentType("application/x-www-form-urlencoded;charset=UTF-8").charset("UTF-8").execute().body();
         JSONObject obj = JSONUtil.parseObj(resp);
-        logger.info("obj"+obj.toString());
+        logger.info("obj" + obj);
         JSONArray newslist = obj.getJSONArray("newslist");
         String content = ((JSONObject) newslist.get(0)).getStr("content");
         return content;
@@ -72,7 +72,7 @@ public class WeiXinServiceImpl implements WeiXinService {
         String requestUrl = UrlConstant.MORNING_API + appKey;
         String resp = HttpUtil.createGet(requestUrl).contentType("application/x-www-form-urlencoded;charset=UTF-8").charset("UTF-8").execute().body();
         JSONObject obj = JSONUtil.parseObj(resp);
-        logger.info("obj"+obj.toString());
+        logger.info("obj" + obj);
         JSONArray newslist = obj.getJSONArray("newslist");
         String content = ((JSONObject) newslist.get(0)).getStr("content");
         return content;
@@ -84,7 +84,7 @@ public class WeiXinServiceImpl implements WeiXinService {
         String requestUrl = UrlConstant.TIAN_QI_API + appKey + "&city=" + city;
         String resp = HttpUtil.createGet(requestUrl).contentType("application/x-www-form-urlencoded;charset=UTF-8").charset("UTF-8").execute().body();
         JSONObject obj = JSONUtil.parseObj(resp);
-        logger.info("obj"+obj.toString());
+        logger.info("obj" + obj);
         JSONArray newslist = obj.getJSONArray("newslist");
         List<WeatherInfo> weatherInfos = JSONUtil.toList(newslist, WeatherInfo.class);
         return weatherInfos.get(0);
@@ -96,7 +96,7 @@ public class WeiXinServiceImpl implements WeiXinService {
         String requestUrl = UrlConstant.JOKE_API + appKey + "&num=1";
         String resp = HttpUtil.createGet(requestUrl).contentType("application/x-www-form-urlencoded;charset=UTF-8").charset("UTF-8").execute().body();
         JSONObject obj = JSONUtil.parseObj(resp);
-        logger.info("obj"+obj.toString());
+        logger.info("obj" + obj);
         JSONArray newslist = obj.getJSONArray("newslist");
         String content = ((JSONObject) newslist.get(0)).getStr("content");
         return content;
@@ -108,7 +108,7 @@ public class WeiXinServiceImpl implements WeiXinService {
         String requestUrl = UrlConstant.SAY_LOVE_API + appKey;
         String resp = HttpUtil.createGet(requestUrl).contentType("application/x-www-form-urlencoded;charset=UTF-8").charset("UTF-8").execute().body();
         JSONObject obj = JSONUtil.parseObj(resp);
-        logger.info("obj"+obj.toString());
+        logger.info("obj" + obj);
         JSONArray newslist = obj.getJSONArray("newslist");
         String content = ((JSONObject) newslist.get(0)).getStr("content");
         return content;

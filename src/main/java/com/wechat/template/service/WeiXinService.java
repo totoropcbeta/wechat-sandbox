@@ -15,7 +15,7 @@ public interface WeiXinService {
     List<String> getUserList(String accessToken);
 
     //发送模板消息
-    JSONObject sendMsg(WechatSendMsgVo sendMsgVo,String token, String openId);
+    JSONObject sendMsg(WechatSendMsgVo sendMsgVo, String token, String openId);
 
     //彩虹屁信息
     String getCaiHongPiInfo(String appKey);
