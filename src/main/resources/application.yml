@@ -3,17 +3,17 @@ server:
 
 #公众号配置
 wechat:
-  appId: 测试号appId
-  appSecret: 测试号appsecret
-  tempId: 天气测试模板id
-  drinkTempId: 喝水提示模板id
-  offDutyTempId: 下班提示模板id
-  myBirthday:  自己的生日 yyyy-MM-dd
-  babyBirthday: 对象生日
-  loveDay: 纪念日
+  appId: wx302b3d5f27936755
+  appSecret: 451067fc7f78b276df7417e3fb9c1e2b
+  tempId: owXAF_UJ5XGpjZdmQ_axKS88Su-OwYD4-hrq0wqO2I4
+  drinkTempId: 5Lu9llWjU5qJ25j9RY5owQu5pWjn5T3xUT4j150OqPY
+  offDutyTempId: 6uknFmzaD8i0Th2eLUMJLR1V2lcsvfYEPogV0gCPvLU
+  myBirthday:  1995-05-22
+  babyBirthday: 1997-02-09
+  loveDay: 2015-11-11
 
 
 #彩虹屁接口
 tianapi:
-  appKey: 天行数据api的apiKey
-  area: 天气城市
+  appKey: af3e574aeb5372bae5be9d18690cdc91
+  area: 北京
