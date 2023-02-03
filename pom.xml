@@ -13,7 +13,7 @@
     <version>0.0.1-SNAPSHOT</version>
     <packaging>jar</packaging>
     <name>template</name>
-    <description>Wechat Templat for Spring Boot</description>
+    <description>Wechat Template for Spring Boot</description>
     <properties>
         <java.version>1.8</java.version>
     </properties>
