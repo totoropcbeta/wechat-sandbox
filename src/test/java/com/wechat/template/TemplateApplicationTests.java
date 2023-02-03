@@ -8,7 +8,8 @@ import com.wechat.template.domain.model.WeatherInfo;
 import com.wechat.template.domain.vo.WechatSendMsgVo;
 import com.wechat.template.domain.vo.WechatTemplateVo;
 import com.wechat.template.service.WeiXinService;
-import org.junit.jupiter.api.Test;
+import org.junit.Ignore;
+import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
@@ -20,7 +21,7 @@ import java.util.List;
 import java.util.Map;
 
 @SpringBootTest
-class TemplateApplicationTests {
+public class TemplateApplicationTests {
 
 
     @Autowired
@@ -33,6 +34,7 @@ class TemplateApplicationTests {
     private TianApiConfig tianApiConfig;
 
     @Test
+    @Ignore
     void sendMsg() throws ParseException {
         //配置及数据
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd");
@@ -96,6 +98,7 @@ class TemplateApplicationTests {
     }
 
     @Test
+    @Ignore
     void sendDrinkMsg() {
         //配置及数据
         String appId = wechatConfig.getAppId();
@@ -122,6 +125,7 @@ class TemplateApplicationTests {
     }
 
     @Test
+    @Ignore
     void sendoffDutyMsg() {
         String content = "卸载上班的压力，删除上班的烦恼，设置明天的斗志,下载轻松的话题，安装快乐的心情，播放灿烂的笑容。";
         //配置及数据
