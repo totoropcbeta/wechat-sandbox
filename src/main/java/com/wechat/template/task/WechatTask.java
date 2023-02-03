@@ -41,7 +41,7 @@ public class WechatTask {
      *
      * @throws ParseException
      */
-    @Scheduled(cron = "0 0 7 * * ? ")
+    @Scheduled(cron = "0 30 7 * * ? ") // 每天早上7点半
     public void sendTemplateMsg() throws ParseException {
         //配置及数据
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd");
@@ -180,9 +180,7 @@ public class WechatTask {
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd");
         //获取Date
         Date t1;
-
         Date t2 = simpleDateFormat.parse(s2);
-        System.out.println(DateUtil.today().substring(5, 10).compareTo(s1.substring(5, 10)));
         if (DateUtil.today().substring(5, 10).compareTo(s1.substring(5, 10)) > 0) {
             int year = DateUtil.year(DateUtil.date());
             s1 = (year + 1) + "-" + s1.substring(5, 10);
@@ -194,8 +192,6 @@ public class WechatTask {
             t1 = simpleDateFormat.parse(s1);
 
         }
-        System.out.println(s1);
-        System.out.println(s2);
         //获取时间戳
         Long time1 = t1.getTime();
         Long time2 = t2.getTime();
